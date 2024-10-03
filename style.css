@@ -71,7 +71,7 @@ section {
   left: 0;
   right: 0;
   height: 16vh;
-  /* z-index: 9999; */
+  z-index: 9999;
 }
 
 .header .logo img {
