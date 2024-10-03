@@ -3,6 +3,7 @@
   --nav-color: #00afa5;
   --bg-color: #e8f3f1;
   --black: #2f4858;
+  --card-color: #c0dbea;
 }
 
 * {
@@ -26,6 +27,39 @@ body {
   background-color: var(--bg-color);
 }
 
+section {
+  padding: 2rem 7%;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 1.7rem;
+  padding: 0.8rem 2.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  letter-spacing: 0.2rem;
+}
+
+.title {
+  text-shadow: 2px 2px 0 var(--card-color), -2px -2px 0 var(--card-color),
+    -2px 2px 0 var(--card-color), 2px -2px 0 var(--card-color);
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 3.5rem 0;
+  font-size: 4rem;
+}
+
+.title span {
+  color: var(--main-color);
+}
+
 .header {
   background-color: var(--nav-color);
   display: flex;
@@ -36,17 +70,18 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  height: 16vh;
   /* z-index: 9999; */
 }
 
 .header .logo img {
-  height: 6rem;
+  height: 10rem;
   border-radius: 50%;
 }
 
 .header .navbar a {
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   margin: 0 1rem;
 }
 
@@ -65,7 +100,7 @@ body {
 .header .icons div {
   color: #fff;
   cursor: pointer;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-left: 2rem;
 }
 
@@ -84,8 +119,8 @@ body {
   position: absolute;
   top: 115%;
   right: -100%;
-  width: 35rem;
-  height: 3.5rem;
+  width: 45rem;
+  height: 4.5rem;
   background-color: #fff;
 }
 
@@ -97,14 +132,14 @@ body {
   width: 100%;
   height: 100%;
   padding: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   color: var(--black);
   text-transform: none;
 }
 
 .header .search-form label {
   color: var(--black);
-  font-size: 1.3rem;
+  font-size: 2rem;
   padding-right: 1.3rem;
   cursor: pointer;
 }
@@ -119,7 +154,7 @@ body {
   position: absolute;
   top: 100%;
   right: -100%;
-  width: 28rem;
+  width: 35rem;
   background-color: #fff;
   height: 80vh;
   border: solid 1px black;
@@ -127,16 +162,20 @@ body {
 }
 
 .header .cart-items-container.active {
-    right: 0;
+  right: 0;
 }
 
 .header .cart-items-container .cart-item {
   display: flex;
   align-items: center;
-  margin: 2rem 0;
-  border: solid 1px black;
+  margin: 2.5rem 0;
+  /* border: solid 1px black; */
   position: relative;
   gap: 1rem;
+}
+
+.header .cart-items-container a {
+  width: 100%;
 }
 
 .header .cart-items-container .cart-item img {
@@ -144,24 +183,103 @@ body {
 }
 
 .header .cart-items-container .cart-item span {
-    position: absolute;
-    top: 5%;
-    right: 4%;
-    font-size: 2rem;
-    color: var(--black);
-    cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  font-size: 2rem;
+  color: var(--black);
+  cursor: pointer;
 }
 
 .header .cart-items-container .cart-item span:hover {
-    color: red;
+  color: red;
 }
 
 .header .cart-items-container .cart-item .content h3 {
-    font-size: 1.2rem;
-    color: var(--black);
-    padding-bottom: .5rem;
+  font-size: 1.5rem;
+  color: var(--black);
+  padding-bottom: 0.8rem;
 }
 
 .header .cart-items-container .cart-item .content .price {
-    font-size: 1rem;
-    color: var(--main-color);}
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+/* home */
+
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 84vh;
+  margin-top: 16vh;
+  background-color: aqua;
+  background-image: url("/images/background3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.home .hero {
+  width: 60rem;
+}
+
+.home .hero h3 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.home .hero p {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 3.2rem;
+  padding: 1rem 0;
+  color: #eee;
+}
+
+/* cakes section */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.cakes .wrapper .cake-card {
+  background-color: var(--card-color);
+  padding: 3rem 2rem;
+  text-align: center;
+  transform-origin: top center;
+}
+
+.cakes .wrapper .cake-card:hover {
+  transform: scaleY(1.1);
+  background-color: var(--black);
+}
+
+.cakes .wrapper .cake-card:hover *:not(a) {
+  color: var(--main-color);
+}
+
+.cakes .wrapper .cake-card img {
+  width: 100%;
+}
+
+.cakes .wrapper .cake-card h3 {
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.cakes .wrapper .cake-card .price {
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 0.5rem 0;
+}
+
+.cakes .wrapper .cake-card .price span {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
